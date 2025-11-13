@@ -1539,12 +1539,15 @@ export default function MenuScreen({ onLogout }: MenuScreenProps) {
 
       {/* Add Dish Dialog */}
       <Dialog open={showAddDishDialog} onOpenChange={setShowAddDishDialog}>
-        <DialogContent className="max-w-[420px] max-h-[90vh] overflow-y-auto rounded-[24px] bg-white border border-[#CFE0D8] shadow-[0_4px_12px_rgba(16,24,40,0.08)]">
+        <DialogContent 
+          className="max-w-[420px] max-h-[90vh] overflow-y-auto rounded-[24px] bg-white border border-[#CFE0D8] shadow-[0_4px_12px_rgba(16,24,40,0.08)]"
+          aria-describedby="add-dish-description"
+        >
           <DialogHeader>
             <DialogTitle className="text-center text-[#1A1A1A] font-['Poppins'] text-[22px] leading-[30px] tracking-[-0.44px] font-semibold">
               {editingDish ? 'Editar plato' : 'Crea tu plato'}
             </DialogTitle>
-            <DialogDescription className="text-center text-[#9FB3A8] text-[14px] font-['Inter']">
+            <DialogDescription id="add-dish-description" className="text-center text-[#9FB3A8] text-[14px] font-['Inter']">
               {editingDish 
                 ? 'Modifica los ingredientes y actualiza el costo' 
                 : 'Agrega los ingredientes y calcula el costo automáticamente'}

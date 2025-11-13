@@ -89,10 +89,9 @@ export default function DishFullModal({ isOpen, onClose, dish, onSave, onDelete 
                 <DialogTitle className="text-[#1A1A1A]" style={{ fontFamily: 'var(--cc-font-heading)', fontSize: '20px', fontWeight: 600 }}>
                   {dish.dish}
                 </DialogTitle>
-                <DialogDescription id="dish-details-description" className="sr-only">
-                  Detalles y edición del plato {dish.dish}
+                <DialogDescription id="dish-details-description" className="text-[14px] text-[#9FB3A8] font-['Inter'] mt-1">
+                  Ver y editar detalles del plato
                 </DialogDescription>
-                <p className="text-sm text-[#757575] mt-1">{dish.category}</p>
               </div>
               <button
                 onClick={onClose}
