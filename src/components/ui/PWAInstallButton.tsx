@@ -78,7 +78,7 @@ export default function PWAInstallButton() {
       {/* iOS Banner */}
       {showIOSBanner && (
         <div 
-          className="flex items-start justify-between"
+          className="flex items-start"
           style={{
             position: "fixed",
             top: 10,
@@ -96,7 +96,7 @@ export default function PWAInstallButton() {
             boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
           }}
         >
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full">
             📱 <strong>Instala Costo Comida Menú</strong>
             <br />
             Abre el menú de compartir y toca:
