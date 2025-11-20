@@ -96,11 +96,13 @@ export default function PWAInstallButton() {
             boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
           }}
         >
-          📱 <strong>Instala Costo Comida Menú</strong>
-          <br />
-          Abre el menú de compartir y toca:
-          <br />
-          <strong>“Añadir a la pantalla de inicio”</strong>
+          <div className="flex">
+            📱 <strong>Instala Costo Comida Menú</strong>
+            <br />
+            Abre el menú de compartir y toca:
+            <br />
+            <strong>“Añadir a la pantalla de inicio”</strong>
+          </div>
           <button
             onClick={() => setShowIOSBanner(false)}
             style={{

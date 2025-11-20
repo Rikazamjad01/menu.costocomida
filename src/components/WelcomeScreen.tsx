@@ -12,7 +12,7 @@ interface WelcomeScreenProps {
 
 export function WelcomeScreen({ onStart, onLogin }: WelcomeScreenProps) {
   return (
-    <div className="flex flex-col min-h-[844px] bg-white justify-between">
+    <div className="flex flex-col min-h-[844px] bg-white justify-between mx-auto">
       <PWAInstallButton />
       {/* Header with Login Button */}
       <div className="px-5 pt-4 flex justify-end">
