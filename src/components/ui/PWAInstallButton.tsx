@@ -56,27 +56,26 @@ export default function PWAInstallButton() {
     <>
       {/* Android / Chrome */}
       {showAndroidButton && !isIOS && (
-        <div
-          style={{
-            position: "fixed",
-            top: 20,
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "80%",
-            zIndex: 9999,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            background: "linear-gradient(to right, #A6D49F, #7BB97A)",
-            border: "1px solid #4e9643",
-            padding: "12px 16px",
-            borderRadius: "12px",
-            color: "#fff",
-            fontSize: "14px",
-            boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-          }}
-        >
-          <span>📲 Agregar Costo Comida Menú a tu pantalla de inicio</span>
+        <div className="flex">
+          <button
+            onClick={handleInstallClick}
+            style={{
+              position: "fixed",
+              bottom: 20,
+              left: "50%",
+              transform: "translateX(-50%)",
+              background: "bg-gradient-to-r from-[#A6D49F] to-[#7BB97A]",
+              border: "1px solid ##4e9643",
+              color: "#fff",
+              padding: "12px",
+              borderRadius: "12px",
+              fontSize: "14px",
+              zIndex: 9999,
+            }}
+          >
+            {" "}
+            📲 Agregar Costo Comida Menú a tu pantalla de inicio{" "}
+          </button>
           <button
             onClick={() => setShowAndroidButton(false)}
             style={{
