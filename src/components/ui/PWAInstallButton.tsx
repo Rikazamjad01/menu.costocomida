@@ -26,10 +26,6 @@ export default function PWAInstallButton() {
       e.preventDefault();
       setDeferredPrompt(e);
       setShowAndroidButton(true);
-
-      // Auto-hide after 10 seconds if not clicked
-      const timer = setTimeout(() => setShowAndroidButton(false), 10000);
-      return () => clearTimeout(timer);
     };
 
     window.addEventListener("beforeinstallprompt", handler as any);
@@ -56,22 +52,9 @@ export default function PWAInstallButton() {
     <>
       {/* Android / Chrome */}
       {showAndroidButton && !isIOS && (
-        <div className="flex">
+        <div className="flex bg-gradient-to-r from-[#A6D49F] to-[#7BB97A] border border-[#4e9643] top-5 left-[50%] fixed text-white p-3 rounded-lg text-[14px] z-50">
           <button
             onClick={handleInstallClick}
-            style={{
-              position: "fixed",
-              top: 20,
-              left: "50%",
-              transform: "translateX(-50%)",
-              background: "linear-gradient(to right, #A6D49F, #7BB97A)",
-              border: "1px solid ##4e9643",
-              color: "#fff",
-              padding: "12px",
-              borderRadius: "12px",
-              fontSize: "14px",
-              zIndex: 9999,
-            }}
           >
             {" "}
             📲 Agregar Costo Comida Menú a tu pantalla de inicio{" "}
@@ -83,7 +66,7 @@ export default function PWAInstallButton() {
               background: "transparent",
               border: "none",
               color: "#fff",
-              fontSize: 16,
+              fontSize: 14,
               cursor: "pointer",
             }}
           >
