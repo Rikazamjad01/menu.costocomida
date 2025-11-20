@@ -80,14 +80,14 @@ export default function PWAInstallButton() {
         <div
           style={{
             position: "fixed",
-            bottom: 10,
+            top: 10,
             left: "50%",
             transform: "translateX(-50%)",
             width: "90%",
             zIndex: 9999,
             background: "linear-gradient(to right, #A6D49F, #7BB97A)",
             border: "1px solid #4e9643",
-            padding: "12px 16px",
+            padding: "12px",
             borderRadius: "12px",
             color: "#fff",
             fontSize: "14px",
