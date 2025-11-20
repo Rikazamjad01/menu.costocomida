@@ -52,7 +52,23 @@ export default function PWAInstallButton() {
     <>
       {/* Android / Chrome */}
       {showAndroidButton && !isIOS && (
-        <div className="flex bg-gradient-to-r from-[#A6D49F] to-[#7BB97A] border border-[#4e9643] top-5 fixed text-white p-3 rounded-lg text-[14px] z-50 max-w-[360px] w-[90%] mx-auto">
+        <div 
+        style={{
+          position: "fixed",
+          top: 10,
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "90%",
+          zIndex: 9999,
+          background: "linear-gradient(to right, #A6D49F, #7BB97A)",
+          border: "1px solid #4e9643",
+          padding: "12px",
+          borderRadius: "12px",
+          color: "#fff",
+          fontSize: "14px",
+          textAlign: "center",
+          boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+        }}>
           <button
             onClick={handleInstallClick}
           >
@@ -105,7 +121,6 @@ export default function PWAInstallButton() {
               padding: "6px 12px",
               borderRadius: 8,
               border: "none",
-              background: "#7BB97A",
               color: "#fff",
               fontWeight: 600,
               cursor: "pointer",
