@@ -61,10 +61,10 @@ export default function PWAInstallButton() {
             onClick={handleInstallClick}
             style={{
               position: "fixed",
-              bottom: 20,
+              top: 20,
               left: "50%",
               transform: "translateX(-50%)",
-              background: "bg-gradient-to-r from-[#A6D49F] to-[#7BB97A]",
+              background: "linear-gradient(to right, #A6D49F, #7BB97A)",
               border: "1px solid ##4e9643",
               color: "#fff",
               padding: "12px",
