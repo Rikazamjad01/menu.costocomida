@@ -26,8 +26,8 @@ export default function PWAInstallButton() {
       e.preventDefault();
       setDeferredPrompt(e);
       setShowAndroidButton(true);
-      // Auto-hide after 20 seconds if not clicked
-      setTimeout(() => setShowAndroidButton(false), 20000);
+      // Auto-hide after 10 seconds if not clicked
+      setTimeout(() => setShowAndroidButton(false), 10000);
     };
 
     window.addEventListener("beforeinstallprompt", handler as any);
@@ -56,14 +56,15 @@ export default function PWAInstallButton() {
           onClick={handleInstallClick}
           style={{
             position: "fixed",
-            bottom: 20,
+            top: 20,
             left: "50%",
             transform: "translateX(-50%)",
-            background: "#000",
+            background: "bg-gradient-to-r from-[#A6D49F] to-[#7BB97A]",
+            border: "1px solid ##4e9643",
             color: "#fff",
-            padding: "14px 20px",
+            padding: "12px",
             borderRadius: "12px",
-            fontSize: "16px",
+            fontSize: "14px",
             zIndex: 9999,
           }}
         >
@@ -76,14 +77,14 @@ export default function PWAInstallButton() {
         <div
           style={{
             position: "fixed",
-            bottom: 0,
+            top: 10,
             left: 0,
             width: "100%",
-            background: "#fff8e7",
-            borderTop: "1px solid #f0d9b5",
-            padding: "16px",
+            background: "bg-gradient-to-r from-[#A6D49F] to-[#7BB97A]",
+            borderTop: "1px solid ##4e9643",
+            padding: "12px",
             textAlign: "center",
-            fontSize: "15px",
+            fontSize: "14px",
             zIndex: 9999,
           }}
         >
