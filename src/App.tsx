@@ -8,7 +8,6 @@ import { ResetPasswordScreen } from "./components/ResetPasswordScreen";
 import { Toaster } from "./components/ui/sonner";
 import { createUserSettings, getUserSettings } from "./lib/supabase-helpers";
 import { createClient } from './utils/supabase/client';
-import PWAInstallButton from "./components/ui/PWAInstallButton";
 
 const supabase = createClient();
 
@@ -208,7 +207,6 @@ export default function App() {
 
   return (
     <div className="relative w-[390px] min-h-[844px] mx-auto bg-[#fcfdfb] font-['Public_Sans',sans-serif]">
-      <PWAInstallButton />
 
       {/* Screens */}
       <AnimatePresence mode="wait" custom={direction}>

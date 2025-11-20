@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { motion } from "motion/react";
 // import chefImage from "figma:asset/1da38d58bc3bb8951579de482f01de77cf178a27.png";
 import { LogIn } from "lucide-react";
+import PWAInstallButton from "./ui/PWAInstallButton";
 
 interface WelcomeScreenProps {
   onStart: () => void;
@@ -12,6 +13,7 @@ interface WelcomeScreenProps {
 export function WelcomeScreen({ onStart, onLogin }: WelcomeScreenProps) {
   return (
     <div className="flex flex-col min-h-[844px] bg-white">
+      <PWAInstallButton />
       {/* Header with Login Button */}
       <div className="px-5 pt-4 flex justify-end">
         <button
