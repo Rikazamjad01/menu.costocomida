@@ -52,7 +52,7 @@ export default function PWAInstallButton() {
     <>
       {/* Android / Chrome */}
       {showAndroidButton && !isIOS && (
-        <div className="flex bg-gradient-to-r from-[#A6D49F] to-[#7BB97A] border border-[#4e9643] top-5 fixed text-white p-3 rounded-lg text-[14px] z-50 max-w-[360px] w-[90%]">
+        <div className="flex bg-gradient-to-r from-[#A6D49F] to-[#7BB97A] border border-[#4e9643] top-5 fixed text-white p-3 rounded-lg text-[14px] z-50 max-w-[360px] w-[90%] mx-auto">
           <button
             onClick={handleInstallClick}
           >
@@ -113,7 +113,7 @@ export default function PWAInstallButton() {
               cursor: "pointer",
             }}
           >
-            Cerrar
+            X
           </button>
         </div>
       )}
