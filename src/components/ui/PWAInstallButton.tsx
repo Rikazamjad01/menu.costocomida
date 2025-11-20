@@ -54,6 +54,9 @@ export default function PWAInstallButton() {
       {showAndroidButton && !isIOS && (
         <div 
         style={{
+          display: 'flex',
+          justifyItems: 'between',
+          alignItems: 'start',
           position: "fixed",
           top: 10,
           left: "50%",
