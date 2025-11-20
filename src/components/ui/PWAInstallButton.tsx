@@ -78,21 +78,6 @@ export default function PWAInstallButton() {
         >
           <span>📲 Agregar Costo Comida Menú a tu pantalla de inicio</span>
           <button
-            onClick={handleInstallClick}
-            style={{
-              marginLeft: 12,
-              background: "rgba(255,255,255,0.2)",
-              border: "none",
-              borderRadius: 8,
-              padding: "6px 10px",
-              color: "#fff",
-              fontWeight: 600,
-              cursor: "pointer",
-            }}
-          >
-            Instalar
-          </button>
-          <button
             onClick={() => setShowAndroidButton(false)}
             style={{
               marginLeft: 8,
