@@ -46,7 +46,7 @@ export default function PWAInstallButton() {
     setShowAndroidButton(false);
   };
 
-  if (isInStandalone) return null; // Already installed
+  if (isInStandalone) return null; 
 
   return (
     <>
