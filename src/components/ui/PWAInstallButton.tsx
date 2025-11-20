@@ -77,7 +77,8 @@ export default function PWAInstallButton() {
 
       {/* iOS Banner */}
       {showIOSBanner && (
-        <div
+        <div 
+          className="flex items-start justify-between"
           style={{
             position: "fixed",
             top: 10,
