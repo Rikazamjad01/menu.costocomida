@@ -96,7 +96,7 @@ export default function PWAInstallButton() {
           }}
         >
           <p className="flex">
-            📱 Instala Costo Comida Menú Abre el menú de compartir y toca: <span className="font-semibold">“Añadir a la pantalla de inicio”</span>
+            📱 Instala Costo Comida Menú Abre el menú de compartir y toca: “Añadir a la pantalla de inicio”
           </p>
           <button
             onClick={() => setShowIOSBanner(false)}
