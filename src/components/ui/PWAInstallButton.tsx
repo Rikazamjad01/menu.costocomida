@@ -96,7 +96,7 @@ export default function PWAInstallButton() {
             boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
           }}
         >
-          <div className="flex">
+          <div className="flex flex-col">
             📱 <strong>Instala Costo Comida Menú</strong>
             <br />
             Abre el menú de compartir y toca:
