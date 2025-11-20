@@ -26,8 +26,10 @@ export default function PWAInstallButton() {
       e.preventDefault();
       setDeferredPrompt(e);
       setShowAndroidButton(true);
+
       // Auto-hide after 10 seconds if not clicked
-      setTimeout(() => setShowAndroidButton(false), 10000);
+      const timer = setTimeout(() => setShowAndroidButton(false), 10000);
+      return () => clearTimeout(timer);
     };
 
     window.addEventListener("beforeinstallprompt", handler as any);
@@ -39,9 +41,11 @@ export default function PWAInstallButton() {
 
   const handleInstallClick = async () => {
     if (!deferredPrompt) return;
+
     deferredPrompt.prompt();
     const choiceResult = await deferredPrompt.userChoice;
     console.log("User choice:", choiceResult.outcome);
+
     setDeferredPrompt(null);
     setShowAndroidButton(false);
   };
@@ -52,40 +56,76 @@ export default function PWAInstallButton() {
     <>
       {/* Android / Chrome */}
       {showAndroidButton && !isIOS && (
-        <button
-          onClick={handleInstallClick}
+        <div
           style={{
             position: "fixed",
             top: 20,
             left: "50%",
             transform: "translateX(-50%)",
+            width: "80%",
+            zIndex: 9999,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
             background: "linear-gradient(to right, #A6D49F, #7BB97A)",
             border: "1px solid #4e9643",
-            color: "#fff",
-            padding: "12px",
+            padding: "12px 16px",
             borderRadius: "12px",
+            color: "#fff",
             fontSize: "14px",
-            zIndex: 9999,
+            boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
           }}
         >
-          📲 Agregar Costo Comida Menú a tu pantalla de inicio
-        </button>
+          <span>📲 Agregar Costo Comida Menú a tu pantalla de inicio</span>
+          <button
+            onClick={handleInstallClick}
+            style={{
+              marginLeft: 12,
+              background: "rgba(255,255,255,0.2)",
+              border: "none",
+              borderRadius: 8,
+              padding: "6px 10px",
+              color: "#fff",
+              fontWeight: 600,
+              cursor: "pointer",
+            }}
+          >
+            Instalar
+          </button>
+          <button
+            onClick={() => setShowAndroidButton(false)}
+            style={{
+              marginLeft: 8,
+              background: "transparent",
+              border: "none",
+              color: "#fff",
+              fontSize: 16,
+              cursor: "pointer",
+            }}
+          >
+            ✕
+          </button>
+        </div>
       )}
 
-      {/* iOS */}
+      {/* iOS Banner */}
       {showIOSBanner && (
         <div
           style={{
             position: "fixed",
-            top: 10,
-            left: 0,
-            width: "100%",
+            bottom: 10,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "90%",
+            zIndex: 9999,
             background: "linear-gradient(to right, #A6D49F, #7BB97A)",
             border: "1px solid #4e9643",
-            padding: "12px",
-            textAlign: "center",
+            padding: "12px 16px",
+            borderRadius: "12px",
+            color: "#fff",
             fontSize: "14px",
-            zIndex: 9999,
+            textAlign: "center",
+            boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
           }}
         >
           📱 <strong>Instala Costo Comida Menú</strong>
@@ -93,7 +133,6 @@ export default function PWAInstallButton() {
           Abre el menú de compartir y toca:
           <br />
           <strong>“Añadir a la pantalla de inicio”</strong>
-          <br />
           <button
             onClick={() => setShowIOSBanner(false)}
             style={{
@@ -104,6 +143,7 @@ export default function PWAInstallButton() {
               background: "#7BB97A",
               color: "#fff",
               fontWeight: 600,
+              cursor: "pointer",
             }}
           >
             Cerrar
